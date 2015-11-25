@@ -55,7 +55,7 @@ var telefone = "9999-9999";
 
 console.log(regExp.exec(telefone));  
 ["9999-9999", index: 0, input: "9999-9999"]  
-``  
+```  
 
 No código acima utilizamos o método `exec` apenas para executar nossa expressão regular.
 
