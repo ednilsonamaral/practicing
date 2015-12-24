@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+/* redifinindo o box-model */
+.row, .column{
+	box-sizing: border-box;
+}
+
+/* clearfix */
+.row:after, .row:before{
+	content: " ";
+	display: table;
+}
+
+.row:after:{
+	clear: both;
+}
+
+/* row */
+.row{
+	margin-bottom: 50px;
+}
+
+/* column */
+.column{
+	position: relative;
+	float: left;
+
+	border: 1px solid #000;
+	padding: 5px;
+}
+
+/* 
+criando uma margem esquerda para todas as colunas, EXCETO a primeira coluna
+assim teremos uma maior legibilidade e estética na disposição das colunas
+*/
+.column + .column{
+	margin-left: 1.6%;
+}
+
+/*
+mr = margem em porcentagem
+mp = margem em pixel
+mc = máximo de colunas
+
+scw = (100 – (m * (mc – 1))) / mc
+
+scw = largura da coluna única
+m = margin (1.6%)
+mc = máximo de colunas (12)
+
+
+cw = (scw * cs) + (m * (cs – 1))
+
+cw = largura da coluna
+scw = largura da coluna única (6.86666666667%)
+cs = column span (1-12)
+m = margin (1.6%)
+
+optei por ter um número máximo de 12 colunas. com esse número de colunas é possível trabalhar de diferentes formas: 1, 2, 4, 6...
+*/
+.column-1 {
+  width: 6.86%;
+}
+ 
+.column-2 {
+  width: 15.33%;
+}
+ 
+.column-3 {
+  width: 23.8%;
+}
+ 
+.column-4 {
+  width: 32.26%;
+}
+ 
+.column-5 {
+  width: 40.3%;
+}
+ 
+.column-6 {
+  width: 49.2%;
+}
+ 
+.column-7 {
+  width: 57.66%;
+}
+ 
+.column-8 {
+  width: 66.13%;
+}
+ 
+.column-9 {
+  width: 74.6%;
+}
+ 
+.column-10 {
+  width: 83.06%;
+}
+ 
+.column-11 {
+  width: 91.53%;
+}
+ 
+.column-12 {
+  width: 100%;
+}
+
+/* ajustando as colunas para telas menores */
+@media only screen and (max-width: 550px) {
+  .column-1, .column-2, .column-3, .column-4, .column-5, .column-6,
+  .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
+    width: auto;
+    float: none;
+  }
+ 
+  .column + .column {
+    margin-left: 0;
+  }
+}
+
