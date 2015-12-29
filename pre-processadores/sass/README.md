@@ -171,6 +171,11 @@ footer {
 ```
 
 
+## Diferença entre SASS e SCSS  
+
+Nos arquivos `.scss` devemos utilizar `{ }` e `;` nas declarações. Já nos arquivos `.sass` não é preciso utilizá-los, apenas declaramos o que queremos uma linha após outra!
+
+
 ## Concluido  
 
 Notei com esses pequenos exemplos o que é possível fazer com um pré-processador. Se trabalharei em um projeto um pouco complexo, onde a folha de estilo irá repetir vários elementos, é aconselhável utilizar SASS para ganharmos tempo de desenvolvimento.
