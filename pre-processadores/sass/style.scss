@@ -27,3 +27,41 @@ section.qualquer{
 	margin-top: 5px;
 	background: $cor-de-fundo-box-section;
 }
+
+a{
+	color: purple;
+	text-decoration: none;
+
+	&:hover{
+		color: red;
+		text-decoration: underline;
+	}
+
+	&:visited{
+		color: $cor-de-fundo-box-section;
+	}
+}
+
+nav{
+	$nav-width: 750px;
+
+	width: 100%;
+	max-width: $nav-width;
+
+	li{
+		width: $nav-width / 10;
+	}
+}
+
+@mixin espacamento-geral{
+	$padding-global: 5px;
+	$margin-global: 5px;
+
+	padding: $padding-global;
+	margin-bottom: $margin-global;
+	margin-top: $margin-global;
+}
+
+footer{
+	@include espacamento-geral;
+}
