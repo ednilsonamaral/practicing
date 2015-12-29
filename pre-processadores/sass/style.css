@@ -1,0 +1,21 @@
+.content {
+  background: #000;
+  font-family: Arial;
+  font-size: 15px; }
+  .content p {
+    line-height: 20px; }
+
+section.qualquer {
+  margin-top: 5px;
+  background: #acacac; }
+  section.qualquer h1 {
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 5px; }
+  section.qualquer article {
+    text-align: justify;
+    line-height: 2px;
+    color: #dcdcdc;
+    padding: 2px; }
+
+/*# sourceMappingURL=style.css.map */

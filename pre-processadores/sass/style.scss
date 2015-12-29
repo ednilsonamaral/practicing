@@ -1,0 +1,29 @@
+.content{
+	background: #000;
+	font-family: Arial;
+	font-size: 15px;
+
+	p{
+		line-height: 20px;
+	}	
+}
+
+$cor-de-fundo-box-section: #acacac;
+
+section.qualquer{
+	h1{
+		font-size: 20px;
+		padding: 10px;
+		margin-bottom: 5px;
+	}
+
+	article{
+		text-align: justify;
+		line-height: 2px;
+		color: #dcdcdc;
+		padding: 2px;
+	}
+
+	margin-top: 5px;
+	background: $cor-de-fundo-box-section;
+}
