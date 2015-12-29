@@ -1,0 +1,49 @@
+.container {
+  margin: 0 auto;
+  width: 980px;
+  background-color: #dcdcdc;
+  height: 100px; }
+
+[class*="col-"] {
+  float: left;
+  padding: 0 5px 0 0;
+  margin-bottom: 5px;
+  border: 1px solid #000; }
+
+.col-1 {
+  width: 7.61667%; }
+
+.col-2 {
+  width: 15.23333%; }
+
+.col-3 {
+  width: 22.85%; }
+
+.col-4 {
+  width: 30.46667%; }
+
+.col-5 {
+  width: 38.08333%; }
+
+.col-6 {
+  width: 45.7%; }
+
+.col-7 {
+  width: 53.31667%; }
+
+.col-8 {
+  width: 60.93333%; }
+
+.col-9 {
+  width: 68.55%; }
+
+.col-10 {
+  width: 76.16667%; }
+
+.col-11 {
+  width: 83.78333%; }
+
+.col-12 {
+  width: 91.4%; }
+
+/*# sourceMappingURL=style.css.map */

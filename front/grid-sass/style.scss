@@ -1,0 +1,25 @@
+$padding-colunms: 5px; //espaçamento geral entre as colunas
+$max-colunms: 12; //número de colunas do grid
+$grid-width: 980px;  //largura máxima do container geral
+
+.container{
+	margin: 0 auto;
+	width: $grid-width;
+	background-color: #dcdcdc;
+
+	height: 100px;
+}
+
+[class*="col-"]{
+	float: left;
+	padding: 0 $padding-colunms 0 0;
+	margin-bottom: $padding-colunms;
+
+	border: 1px solid #000;
+}
+
+@for $num-colunm from 1 through $max-colunms{
+	.col-#{$num-colunm}{
+		width: 91.4% / $max-colunms * $num-colunm;
+	}
+}
