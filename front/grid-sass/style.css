@@ -1,49 +1,62 @@
 .container {
-  margin: 0 auto;
   width: 980px;
   background-color: #dcdcdc;
-  height: 100px; }
+  height: 100%;
+  margin: 0 auto; }
 
-[class*="col-"] {
+h3 {
+  font-size: 20px; }
+
+.row:after {
+  display: block;
+  clear: both;
+  content: ''; }
+
+.row + .row {
+  margin-top: 3%; }
+
+[class^="col-"] {
   float: left;
-  padding: 0 5px 0 0;
-  margin-bottom: 5px;
-  border: 1px solid #000; }
+  margin-right: 3%;
+  box-sizing: border-box;
+  border: 1px solid #f00; }
+  [class^="col-"]:last-child {
+    margin-right: 0%; }
 
 .col-1 {
-  width: 7.61667%; }
+  width: 5.58333%; }
 
 .col-2 {
-  width: 15.23333%; }
+  width: 14.16667%; }
 
 .col-3 {
-  width: 22.85%; }
+  width: 22.75%; }
 
 .col-4 {
-  width: 30.46667%; }
+  width: 31.33333%; }
 
 .col-5 {
-  width: 38.08333%; }
+  width: 39.91667%; }
 
 .col-6 {
-  width: 45.7%; }
+  width: 48.5%; }
 
 .col-7 {
-  width: 53.31667%; }
+  width: 57.22953%; }
 
 .col-8 {
-  width: 60.93333%; }
+  width: 65.66667%; }
 
 .col-9 {
-  width: 68.55%; }
+  width: 74.26875%; }
 
 .col-10 {
-  width: 76.16667%; }
+  width: 82.83333%; }
 
 .col-11 {
-  width: 83.78333%; }
+  width: 91.49312%; }
 
 .col-12 {
-  width: 91.4%; }
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

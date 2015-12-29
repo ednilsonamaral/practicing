@@ -1,25 +1,52 @@
-$padding-colunms: 5px; //espaçamento geral entre as colunas
-$max-colunms: 12; //número de colunas do grid
-$grid-width: 980px;  //largura máxima do container geral
-
 .container{
-	margin: 0 auto;
-	width: $grid-width;
+	width: 980px;
 	background-color: #dcdcdc;
+	height: 100%;
 
-	height: 100px;
+	margin: 0 auto;
 }
 
-[class*="col-"]{
-	float: left;
-	padding: 0 $padding-colunms 0 0;
-	margin-bottom: $padding-colunms;
-
-	border: 1px solid #000;
+h3{
+	font-size: 20px;
 }
 
-@for $num-colunm from 1 through $max-colunms{
-	.col-#{$num-colunm}{
-		width: 91.4% / $max-colunms * $num-colunm;
+%clearfix:after{
+	display: block;
+	clear: both;
+	content: '';
+}
+
+$grid-spacing: 3%;
+
+.row{
+	@extend %clearfix;
+
+	& + & {
+		margin-top: $grid-spacing;
 	}
 }
+
+[class^="col-"]{
+	float: left;
+	margin-right: $grid-spacing;
+	box-sizing: border-box;
+
+	&:last-child{
+		margin-right: 0%;
+	}
+
+	border: 1px solid #f00;
+}
+
+.col-1{ width: (100% / 12) - ($grid-spacing * 11 / 12); }
+.col-2{ width: (100% / 6) - ($grid-spacing * 10 / 12); }
+.col-3{ width: (100% / 4) - ($grid-spacing * 9 / 12); }
+.col-4{ width: (100% / 3) - ($grid-spacing * 8 / 12); }
+.col-5{ width: (100% / 2.4) - ($grid-spacing * 7 / 12); }
+.col-6{ width: (100% / 2) - ($grid-spacing * 6 / 12); }
+.col-7{ width: (100% / 1.71) - ($grid-spacing * 5 / 12); }
+.col-8{ width: (100% / 1.5) - ($grid-spacing * 4 / 12); }
+.col-9{ width: (100% / 1.333) - ($grid-spacing * 3 / 12); }
+.col-10{ width: (100% / 1.2) - ($grid-spacing * 2 / 12); }
+.col-11{ width: (100% / 1.09) - ($grid-spacing * 1 / 12); }
+.col-12{ width: 100%; }
