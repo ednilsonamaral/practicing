@@ -81,8 +81,14 @@ Sua API é extremamente simples e enxuta, limitando-se em 4 principais funções
 * Recarrega a página automaticamente quando um arquivo for salvo: `gulp-livereload`.
 
 
+## Instalação de módulos Gulp  
+
+`npm install --save-dev gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-livereload tiny-lr`
+
+
 ## Fontes  
 
 [Desenvolvimento para Web - Gulp](http://desenvolvimentoparaweb.com/javascript/gulp/)  
 [Bye bye Grunt.js, hello Gulp.js!](http://blog.caelum.com.br/bye-bye-grunt-js-hello-gulp-js/)  
-[Gulp: o novo automatizador](http://tableless.com.br/gulp-o-novo-automatizador/)
+[Gulp: o novo automatizador](http://tableless.com.br/gulp-o-novo-automatizador/)  
+[Gulp API](https://github.com/gulpjs/gulp/blob/master/docs/API.md)
