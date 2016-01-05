@@ -62,7 +62,9 @@ Declarando assim, vários elementos contidos no `section.qualquer`. Legal! :)
 
 Enquanto o comando no terminal ainda roda, nota-se que enquanto vamos alterando e sando nosso arquivo `style.scss` ele já vai atualizando o `style.css`. E no terminal, ele vai mostrando na tela mais ou menos um tipo de log, com o que foi feito e onde, e ainda mostra alguns erros, se houver.  
 
-Os exemplos acimas foram exemplos comuns utilizando SASS.
+Os exemplos acimas foram exemplos comuns utilizando SASS.  
+
+Podemos com SASS compactar nossos arquivos CSS, basta utilizarmos o comando `sass --watch style.scss:style.css --style compact` enquanto escrevemos nosso código em SASS.
 
 
 ## Exemplos com Variáveis  
