@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" ng-app="helloWorld">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Hello, World!</title>
+
+	<script src="angular.js"></script>
+
+	<script>
+		//os [] são a introduzão de novos módulos
+		angular.module("helloWorld", []);
+
+		//criando o controller
+		angular.module("helloWorld").controller("helloWorldCtrl", function($scope){
+			$scope.message = "Hello, World!";
+		});
+	</script>
+</head>
+
+<body>
+	<div ng-controller="helloWorldCtrl">
+		{{message}}
+	</div>
+</body>
+
+</html>
