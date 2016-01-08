@@ -1,0 +1,56 @@
+body{
+	background: #5B9DFF;
+	margin: 0 auto;
+	font-family: "Trebuchet MS", Arial;
+	font-size: 14px;
+}
+
+#geral{
+	width: 750px;
+	height: 350px;
+	margin: 0 auto;
+	text-align: center;
+	background: #DDE0E1;
+	color: #FFF;
+	margin-top: 80px;
+	border: 2px solid #BABABA;
+	border-radius: 8px;
+	-moz-box-shadow: 10px 5px 5px #F00;
+	-webkit-box-shadow: 10px 10px 5px #F00;
+	box-shadow: 3px 3px 3px #888;
+}
+
+#geral .frm_login input{
+	padding: 10px;
+	font-size: 14px;
+}
+
+#geral .frm_login input.btn_submit{
+	background: #5B9DFF;
+	color: #FFF;
+	padding: 5px;
+	border: 2px #5B9DFF solid;
+	margin-top: 25px;
+}
+
+#geral .frm_login .recupera_senha{
+	color: #000;
+	margin-left: 5px;
+	font-size: 16px;
+}
+
+#rodape{
+	width: 750px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 13px;
+}
+
+#rodape a{
+	text-decoration: none;
+	color: #000;
+}
+
+#rodape a:hover{
+	text-decoration: underline;
+}

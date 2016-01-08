@@ -1,0 +1,100 @@
+body{
+	background: #5B9DFF;
+	margin: 0 auto;
+	font-family: "Trebuchet MS", Arial;
+	font-size: 14px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#geral{
+	width: 100%;
+	max-width: 1060px;
+	height: 0 auto;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+	background: #fefefe;
+	background: -moz-linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #eee9f0));
+	background: -webkit-linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+	background: -o-linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+	background: -ms-linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+	background: linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+}
+
+#geral .localizacao{
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 0;
+	color: #FFF;
+	background: #888;
+	margin-bottom: 5px;
+}
+
+#geral .quadro_login{
+	text-align: left;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 0;
+	margin-top: -10px;
+}
+
+#geral .quadro_login p.titulo{
+	font-weight: bold;
+	font-size: 18px;
+	color: #00F;
+}
+
+#geral .conteudo{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	text-align: justify;
+}
+
+#rodape{
+	width: 100%;
+	max-width: 1060px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 13px;
+	border-top: 1px solid #888;
+}
+
+#rodape a{
+	text-decoration: none;
+	color: #000;
+}
+
+#rodape a:hover{
+	text-decoration: underline;
+}
+
+input{
+	font-weight: bold;
+}
+
+#quadro_data_table{
+	width: 1038px;
+	margin-bottom: 5px;
+}
+
+#quadro_funcionalidades{
+	margin-bottom: 5px;
+	margin-top: -5px;
+	background: url('../img/funcionalidades.png') top center no-repeat;
+	width: 350px;
+	height: 65px;
+}
+
+#quadro_funcionalidades .conteudo_quadro_funcionalidades{
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 22px;
+}
