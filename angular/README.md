@@ -292,3 +292,102 @@ E nas páginas que quero exibir esse footer, basta chamarmos a div da seguinte m
 ```  
 
 Nota-se que chamamos o arquivo `footer.html` dentro das aspas e das aspas simples. Isso porque se deixarmos sem as aspas simples, ele vai tentar buscar o `footer.html` no Scope e não no diretório.
+
+
+## Validação de Formulários  
+
+### `ngRequired`  
+
+Ele vai definir um determinado campo do formulário como obrigatório.  
+
+Dentro do `form`, podemos consultar a validade de um campo ou até mesmo do formulário através do `$valid` e `$invalid`.  
+
+```html  
+<form name="contatoForm">  
+	<input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="nome" ng-required="true">  
+	<input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="telefone" ng-required="true">  
+
+	<select ng-model="contato.operadora" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras" class="form-control">  
+		<option value="">Selecione uma operadora</option>  
+	</select>  
+</form>  
+
+<div class="alert alert-danger" ng-show="contatoForm.nome.$invalid">  
+	Por favor, preencha o nome!  
+</div>  
+
+<div class="alert alert-danger" ng-show="contatoForm.telefone.$invalid">  
+	Por favor, preencha o telefone!  
+</div>  
+```  
+
+Como vemos no código acima, demos um `name` nos campos nome e telefone e criamos duas div's após o formulário. Onde na div, chamados dentro de `ng-show` o objeto do formulário e o campo desejado, e, então dizemos a ele para mostrar essa mensagem se o campo for inválido, ou seja, se não houver nenhuma entrada do usuário.  
+
+O `$valid` possui a mesma lógica, ao inverso.
+
+
+#### `$pristine` e `$dirty`  
+
+Eles verificam se um formulário ou algum campo já foi utilizado alguma vez.  
+
+Seguindo o exemplo anterior, nota-se que as mensagens ficam fixas na tela. Para não mostrarmos ela toda hora, devemos fazer o seguinte:  
+
+JS  
+```js  
+$scope.adicionarContato = function (contato){  
+	//(...)  
+
+	//vai fazer os campos voltarem ao estado de pristine = true  
+	$scope.contatoForm.$setPristine();  
+};  
+```  
+
+HTML  
+```html  
+<div class="alert alert-danger" ng-show="contatoForm.nome.$invalid && contatoForm.nome.$dirty">
+	Por favor, preencha o nome!
+</div>
+```  
+
+Dentro do `ng-show` dizemos que além de ele ser `$invalid` ele é `$dirty`. Então, no JS, fazemos com que ele volte ao estado de pristine. Assim não aparecendo a mensagem cada vez que for adicionado um novo contato.
+
+
+### `ngMinLength` e `ngMaxLength`  
+
+Eles definem o tamanho mínimo e máximo permitido para determinado campo. Não é uma máscara, é uma validação.
+
+
+### `ngPattern`  
+
+Ele funciona em cima de uma expressão regular, onde teremos uma flexibilidade para criarmos a expressão que precisarmos para validar um tipo especifico de determinado campo.  
+
+```html  
+<input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/">  
+
+<div class="alert alert-danger" ng-show="contatoForm.telefone.$error.pattern">  
+	O campo telefone deve ter o formato DDDD-DDDD.  
+</div>  
+```
+
+
+### `ngMessage`  
+
+HTML  
+```html  
+<div class="alert alert-danger" ng-messages="contatoForm.nome.$error">  
+	<div ng-message="required">  
+		Por favor, preencha o nome!  
+	</div>  
+
+	<div ng-message="minlength">  
+		O campo nome deve ter no mínimo 10 caracteres!  
+	</div>  
+</div>  
+```  
+
+JS  
+```js  
+angular.module("listaTelefonica", ["ngMessages"]);
+```  
+
+O módulo `ngMessages` é externo ao Angular. Então, devemos declarar na chamada principal dos módulos. Além, é claro, de importar o arquivo JS dele.
