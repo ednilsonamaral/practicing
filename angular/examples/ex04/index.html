@@ -132,24 +132,22 @@
 			</select>
 		</form>
 
-		<div class="alert alert-danger" ng-messages="contatoForm.nome.$error">
+		<div ng-messages="contatoForm.nome.$error" class="alert alert-danger">
 			<div ng-message="required">
-				Por favor, preencha o nome!
+				Por favor, preencha o campo nome!
 			</div>
-
+			
 			<div ng-message="minlength">
-				O campo nome deve ter no mínimo 10 caracteres!
+				O campo nome deve ter no mínimo 10 caracteres.
 			</div>
 		</div>
 
-		<div class="alert alert-danger" ng-messages="contatoForm.telefone.$error">
-			<div ng-message="required">
-				Por favor, preencha o telefone!
-			</div>
+		<div ng-show="contatoForm.telefone.$error.required && contatoForm.telefone.$dirty" class="alert alert-danger">
+			Por favor, preencha o campo telefone!
+		</div>
 
-			<div ng-message="pattern">
-				O campo telefone deve ter o formato DDDD-DDDD.
-			</div>
+		<div ng-show="contatoForm.telefone.$error.pattern" class="alert alert-danger">
+			O campo telefone deve ter o formato DDDDD-DDDD.
 		</div>
 		
 
