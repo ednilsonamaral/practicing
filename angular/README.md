@@ -391,3 +391,124 @@ angular.module("listaTelefonica", ["ngMessages"]);
 ```  
 
 O módulo `ngMessages` é externo ao Angular. Então, devemos declarar na chamada principal dos módulos. Além, é claro, de importar o arquivo JS dele.
+
+
+## Filtros  
+
+> Os filtros nem sempre filtram.  
+
+Basicamente, os filtros transformam o resultado de uma determinada expressão, realizando assim outras operações, como por exemplo, formatação de data, conversões de moeda e ordenação um array.
+
+
+### Uppercase  
+
+Ele transforma uma string em letra maiúscula.  
+
+Exemplo: `<td>{{contato.nome | uppercase}}</td>`
+
+
+### Lowercase  
+
+Transforma uma string em letras minúsculas.  
+
+Exemplo: `<td>{{contato.operadora.nome | lowercase}}</td>`
+
+
+### Date  
+
+Ele irá formatar uma data utilizando uma máscara.  
+
+JS  
+```js  
+$scope.contatos = [  
+	{nome: "Pedro", telefone: "35217070", cor: "blue", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular"}},  
+	{nome: "Ana", telefone: "35219999", cor: "red", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"}},  
+	{nome: "Maria", telefone: "35218888", cor: "green", data: new Date(), operadora: {nome: "Tim", codigo: 41, categoria: "Celular"}},  
+];  
+```  
+
+HTML  
+```html  
+<td>{{contato.data | date:'dd/MM/yyyy HH:mm'}}</td>  
+```  
+
+No exemplo acima chamados da função `Date()` no Scope de contatos e no HTML, se deixar após o pipe ( | ) apenas `date` ele vai mostrar na tela no padrão em inglês. Por isso declaramos nosso formato após os dois pontos.
+
+
+### Filter  
+
+É um pouco complexo, onde ele irá filtar um array baseando-se em um determinado critério.  
+
+Podemos facilmente criar um campo de busca com o filter. Segue exemplo:  
+
+HTML  
+```html  
+<input type="text" ng-model="criterioBusca" placeholder="O que você está buscando?" class="form-control">  
+
+<tr ng-repeat="contato in contatos | filter:criterioBusca" ng-class="{'selecionado negrito': contato.selecionado}">  
+	<!--  
+		conteúdo  
+	-->  
+</tr>  
+```  
+
+Aqui, criamos o campo onde o usuário vai entrar com o que ele deseja buscar, e no `ng-repeat` de onde estão sendo mostrados os dados, ele já atualiza automaticamente de acordo com o critério de busca inserido pelo usuário, graças ao `| filter:criterioBusca`.  
+
+É preciso atentar ao declarar a expressão do filter. Se declararmos `filter:'criterioBusca'` utilizando as aspas simples, ele não vai mostrar nada na tela enquanto o usuário não digitar algo para buscar. Por isso, foi digitado a expressão sem o uso de aspas simples, para que mostre os dados.  
+
+Caso queiramos filtrar as buscas do usuário apenas por um campo especifico, como o nome, por exemplo, basta declarmos um objeto na expressão do filter, ficando então `filter: {nome: criterioBusca}`.
+
+
+### orderBy  
+
+Ele irá ordenar um array baseando-se em um determinado critério.  
+
+JS  
+```js  
+$scope.ordenarPor = function (campo){  
+	$scope.criterioOrdenacao = campo;  
+	
+	//quando for false vira true, quando for true vira false  
+	$scope.direcaoOrdenacao = !$scope.direcaoOrdenacao;  
+};  
+```  
+
+HTML  
+```html  
+<tr ng-repeat="contato in contatos | filter:criterioBusca | orderBy:criterioOrdenacao:direcaoOrdenacao" ng-class="{'selecionado negrito': contato.selecionado}">  
+	<!--  
+		conteúdo  
+	-->  
+
+	<th><a href="#" ng-click="ordenarPor('nome')">Nome</a></th>  
+	<th><a href="#" ng-click="ordenarPor('telefone')">Telefone</a></th>  
+</tr>  
+```  
+
+Nesse exemplo, podemos ordenar os campos nome e telefone sempre que clicarmos neles. No select, também está ordenado a lista de operadoras pelo nome.
+
+
+### Currency  
+
+Ele é responsável por converter um número para uma moeda. Importamos o `<script src="lib/angular/angular-locale_pt-br.js"></script>` que será responsável por adicionar o R$, entre outras formatações, como data, mês e hora.  
+
+Automaticamente, após a inclusão desse locale, no select já estará formatado para o real.
+
+
+### Number  
+
+Irá formatar um número. Ele pode ser considerado um pouco similar ao currency, exceto pelo fato da moeda.  
+
+Exemplo: `{{100.23 | number:1}}`  
+
+Onde ele irá mostrar apenas 1 casa após a vírgula. Caso tivessemos colocado 100.26, ele já iria mostrar arrendado para 100.30.
+
+
+### limitTo  
+
+Ele vai limitar o tamanho de um array ou uma string.  
+
+Exemplo: `<td>{{contato.nome | uppercase | limitTo:3}}</td>` onde limitados o campo nome para exibir apenas os três primeiro dígitos.
+
+
+## Integração com Back-end via Ajax
