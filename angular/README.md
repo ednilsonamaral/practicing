@@ -512,3 +512,8 @@ Exemplo: `<td>{{contato.nome | uppercase | limitTo:3}}</td>` onde limitados o ca
 
 
 ## Integração com Back-end via Ajax
+
+
+## Fontes  
+
+Tudo o que foi descrito acima aprendi nas vídeo aulas do [Rodrigo Branas](https://www.youtube.com/playlist?list=PLQCmSnNFVYnTD5p2fR4EXmtlR6jQJMbPb), o cara é foda!
