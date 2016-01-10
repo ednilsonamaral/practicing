@@ -511,7 +511,147 @@ Ele vai limitar o tamanho de um array ou uma string.
 Exemplo: `<td>{{contato.nome | uppercase | limitTo:3}}</td>` onde limitados o campo nome para exibir apenas os três primeiro dígitos.
 
 
-## Integração com Back-end via Ajax
+## Integração com Back-end via Ajax  
+
+O Ajax (Asynchnous JavaScript and XML) é uma combinação de várias tecnologias, como HTML, CSS, DOM, JSON, etc.
+
+
+### `$http`  
+
+Esse serviço do AngularJS é responsável por permitir a realização de requisições utilizando o XMLHttpRequest ou via JSONP, onde:  
+
+* GET: url, config;  
+* POST: url, data, config;  
+* PUT: url, data, config;  
+* DELETE: utl, config;  
+* HEAD: url, config;  
+* JSONP: url, config.
+
+
+### SOP  
+
+SOP, ou Same-Origin Policy, é uma política de restrição de segurança que impede que o navegador acesse recursos alheios a sua origem, considerando protoloco, host e porta.
+
+
+### JSONP  
+
+JSON com padding.
+
+
+### CORS  
+
+Cross-Origin Resource Sharing, ou seja, uma permissão para acessar recursos externos por meio de cabeçalhos HTTP adicionais.
+
+
+## Organizando um Projeto em AngularJS  
+
+### Inline  
+
+Tudo em um único arquivo. Esse modo é recomendado para:  
+
+* Projetos pequenos e simples;  
+* Hello World da vida;  
+* Iniciando a estudar o framework;  
+* Protótipos;  
+* Provas de conceito.  
+
+```  
+> app/  
+---| index.html  
+---| angular.js  
+```
+
+
+### Stereotyped  
+
+Onde os componentes do mesmo tipo ficam juntos. Recomendado para:  
+
+* Projetos que estão entre o básico e intermediário;  
+* Projetos pequenos;  
+* Poucos componentes;  
+* Pouco código em cada componente;  
+* Domínio único.  
+
+```  
+> app/  
+---> css/  
+------| app.css  
+---> js/  
+------| app.js  
+------| controllers.js  
+------| directives.js  
+------| filters.js  
+---> lib/  
+------| angular.js  
+---> view/  
+------| login.html  
+------| lista.html  
+---> index.html  
+```
+
+
+### Specific  
+
+É um estilo onde teremos um arquivo para cada componente. Recomendado para:  
+
+* Projetos médios;  
+* Muitos componentes;  
+* Número de linhas em cada arquivo já começa a incomodar e "encher o saco";  
+* Domínio relativamente extenso.  
+
+```  
+> app/  
+---> css/  
+------| app.css  
+---> js/  
+------> controllers/  
+---------| loginCtrl.js  
+---------| listaCtrl.js  
+------> directives/  
+---------| panelDirective.js  
+---------| tableDirective.js  
+------> services/  
+---------| loginService.js  
+---------| listaService.js  
+---> lib/  
+------| angular.js  
+---> view/  
+------| login.html  
+------| lista.html  
+---> index.html  
+```
+
+
+### Domain  
+
+Trabalha de forma que agrupa-se os arquivos por domínio. Recomendado para:  
+
+* Projetos grandes;  
+* Utilização de módulos;  
+* Domínio extenso.  
+
+```  
+> app/  
+---> app/  
+------| app.css  
+------| app.js  
+---> login/  
+------| login.css  
+------| login.html  
+------| loginCtrl.js  
+------| loginService.js  
+---> lista/  
+------| lista.css  
+------| lista.html  
+------| listaCtrl.js  
+------| listaService.js  
+---> shared/  
+------| panelDirective.js  
+------| tableDirective.js  
+---> lib/  
+------| angular.js  
+---> index.html  
+```
 
 
 ## Fontes  
