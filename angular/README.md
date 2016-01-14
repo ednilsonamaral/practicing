@@ -653,6 +653,19 @@ Trabalha de forma que agrupa-se os arquivos por domínio. Recomendado para:
 ---> index.html  
 ```
 
+## Modularizando um Projeto em AngularJS  
+
+Um módulo em AngularJS nada mais é que uma coleção de componentes, ou seja, um conjunto de controllers, directives, filter, services, entre outros tipos de componentes que serão utilizados pela aplicação em questão.  
+
+Para criar um novo módulo, basta `angular.module("nomeDoModulo", []);`. O uso de `[]` é para criar um novo módulo. Se utilizarmos apenas o comando `angular.module("nomeDoModulo");` estaremos localizando esse módulo.  
+
+Algumas características de modulizar seu projeto são:  
+
+* Reuso;  
+* Organização;  
+* Performance;  
+* Isolamento.
+
 
 ## Fontes  
 
