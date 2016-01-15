@@ -1,0 +1,15 @@
+<ion-header-bar class="bar-stable">
+	<h1 class="title">User List</h1>
+</ion-header-bar>
+
+<ion-content class="padding">
+	<ion-list>
+		<ion-item class="item-avatar" ng-repeat="item in users" ui-sref="userListDetail({index: $index})">
+			<img src="{{item.user.picture.thumbnail}}">
+			<h2>{{item.user.name.first}}  {{item.user.name.last}}</h2>
+			<p>{{item.user.location.city}}  {{item.user.password}}</p>
+		</ion-item>
+	</ion-list>
+
+	<p><a href="#/main">- Voltar -</a></p>
+</ion-content>
