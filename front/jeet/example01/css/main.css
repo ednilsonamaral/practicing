@@ -1,0 +1,95 @@
+body {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+section {
+  *zoom: 1;
+  width: auto;
+  max-width: 1440px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+section:before,
+section:after {
+  content: '';
+  display: table;
+}
+section:after {
+  clear: both;
+}
+section .col-left {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%;
+  background-color: #00f;
+  color: #fff;
+}
+section .col-left:before,
+section .col-left:after {
+  content: '';
+  display: table;
+}
+section .col-left:after {
+  clear: both;
+}
+section .col-left:last-child {
+  margin-right: 0%;
+}
+section article {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  background-color: #f00;
+}
+section article:before,
+section article:after {
+  content: '';
+  display: table;
+}
+section article:after {
+  clear: both;
+}
+section article:last-child {
+  margin-right: 0%;
+}
+section article p {
+  background-color: #fff;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 18px;
+  padding: 10px;
+}
+section .col-right {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%;
+  background-color: #ff0;
+}
+section .col-right:before,
+section .col-right:after {
+  content: '';
+  display: table;
+}
+section .col-right:after {
+  clear: both;
+}
+section .col-right:last-child {
+  margin-right: 0%;
+}

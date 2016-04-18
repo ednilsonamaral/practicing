@@ -1,0 +1,17 @@
+{
+  "name": "example02",
+  "version": "1.0.0",
+  "description": "exemplo de grid com jeet - 2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ednilson Amaral",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.9.2",
+    "jeet": "^6.1.2",
+    "rupture": "^0.6.1",
+    "stylus": "^0.54.2"
+  }
+}
